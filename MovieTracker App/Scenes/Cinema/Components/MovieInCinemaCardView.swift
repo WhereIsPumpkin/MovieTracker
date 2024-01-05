@@ -9,22 +9,19 @@ import SwiftUI
 
 struct MovieInCinemaCardView: View {
     
+    // MARK: - Properties
     @Binding var movieCard: CinemaMovie
     var imageUrlBase = "https://image.tmdb.org/t/p/original"
     
+    //MARK: - Body
     var body: some View {
-        
-        VStack(alignment: .leading) {
-            
+        VStack(alignment: .leading, spacing: 16) {
             image
-            
-            Spacer()
-                .frame(height: 16)
-            
             details
         }
     }
     
+    // MARK: - Content Stack
     private var image: some View {
         AsyncImage(url: URL(string: "\(imageUrlBase)\(movieCard.posterPath)")) { image in
             image.resizable()
@@ -48,14 +45,18 @@ struct MovieInCinemaCardView: View {
     }
     
     private var details: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            RatingView(rating: $movieCard.voteAverage)
-            
-            Text(movieCard.title)
-                .font(.system(size: 16, weight: .semibold))
-                .foregroundStyle(.white)
-            
-            description
-        }
-    }
+           VStack(alignment: .leading, spacing: 6) {
+               RatingView(rating: $movieCard.voteAverage)
+                   .frame(height: 20)
+               
+               Text(movieCard.title)
+                   .font(.system(size: 16, weight: .semibold))
+                   .foregroundStyle(.white)
+                   .frame(height: 20)
+               
+               description
+                   .frame(height: 20)
+           }
+           .frame(height: 60)
+       }
 }
