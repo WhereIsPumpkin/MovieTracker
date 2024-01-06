@@ -8,7 +8,6 @@
 import Foundation
 
 struct Response: Decodable {
-  //  let page: Int
     let results: [Person]
 }
 
@@ -33,5 +32,4 @@ struct Person: Decodable, Identifiable {
 }
 struct KnownFor: Decodable {
     let title: String?
-    let overview: String?
 }

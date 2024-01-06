@@ -13,8 +13,7 @@ struct FamousPersonsView: View {
     // MARK: - Properties
     
     @ObservedObject var viewModel: FamousPersonsVM
-    
-    
+
     private let gridLayout = [
         GridItem(.flexible()),
         GridItem(.flexible()),

@@ -15,53 +15,60 @@ struct PersonsView: View {
     
     // MARK: - Body
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             
             profilePic
             info
-                .frame(height: 50)
+                .frame(height: 60)
         }
-
+        .frame(width: 160)
         .background(.white)
-//        .clipShape(RoundedRectangle(cornerRadius: 10))
-        .clipShape(
-            .rect(
-            topLeadingRadius: 10,
-            bottomLeadingRadius: 0,
-            bottomTrailingRadius: 0,
-            topTrailingRadius: 10
-            )
-            )
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        
     }
+    
     private var profilePic: some View {
         AsyncImage(url: URL(string: "\(profilePathUrl)\(person.profilePath ?? "test")")) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 160, height: 240)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-        } placeholder: {
+                .frame(height: 240)
             
+        } placeholder: {
+            Image("jacob")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: 240)
         }
     }
-    
+
     private var info: some View {
         VStack(alignment: .leading) {
             Text(person.name)
-   
-            Text(person.knownForDepartment)
-            HStack {
-                Image(systemName: "triangle.fill")
-                    .foregroundColor(.green)
-                
-                Text("(\(String(person.popularity)))")
-                
+                .font(.system(size: fontSize(for: person.name)))
+                .bold()
+                .foregroundColor(.black)
+            
+            ForEach(Array(person.knownFor.prefix(2)), id: \.title) { knownFor in
+                if let title = knownFor.title {
+                    Text(title)
+                        .font(.system(size: fontSize(for: title)))
+                        .foregroundColor(.black)
+                }
             }
         }
-        .font(.system(size: 14, weight: .light))
-        .foregroundColor(.black)
+    }
+    
+    private func fontSize(for text: String) -> CGFloat {
+        if text.count > 50 {
+            return 12
+        } else {
+            return 14
+        }
     }
 }
+
+//}
    
 //#Preview {
 //    PersonsView(viewModel: FamousPersonsVM())
