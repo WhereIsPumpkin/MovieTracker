@@ -10,7 +10,7 @@ import SwiftUI
 struct PersonsView: View {
     
     // MARK: - Properties
-    @Binding var person: Result
+    @Binding var person: Person
     var profilePathUrl = "https://image.tmdb.org/t/p/w500"
     
     // MARK: - Body
@@ -22,8 +22,16 @@ struct PersonsView: View {
                 .frame(height: 50)
         }
 
-        .background(.black)
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .background(.white)
+//        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .clipShape(
+            .rect(
+            topLeadingRadius: 10,
+            bottomLeadingRadius: 0,
+            bottomTrailingRadius: 0,
+            topTrailingRadius: 10
+            )
+            )
     }
     private var profilePic: some View {
         AsyncImage(url: URL(string: "\(profilePathUrl)\(person.profilePath ?? "test")")) { image in
@@ -41,7 +49,7 @@ struct PersonsView: View {
         VStack(alignment: .leading) {
             Text(person.name)
    
-            
+            Text(person.knownForDepartment)
             HStack {
                 Image(systemName: "triangle.fill")
                     .foregroundColor(.green)
@@ -51,7 +59,7 @@ struct PersonsView: View {
             }
         }
         .font(.system(size: 14, weight: .light))
-        .foregroundColor(.white)
+        .foregroundColor(.black)
     }
 }
    

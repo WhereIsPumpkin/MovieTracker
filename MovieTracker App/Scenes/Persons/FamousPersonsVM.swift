@@ -11,7 +11,7 @@ import NetSwift
 class FamousPersonsVM: ObservableObject {
     
     // MARK: - Properties
-    @Published var famousPersonsResult: [Result] = []
+    @Published var famousPersonsResult: [Person] = []
     @Published var error: String = "error"
     
     
