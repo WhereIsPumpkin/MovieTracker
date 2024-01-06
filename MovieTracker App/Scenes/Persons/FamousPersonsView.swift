@@ -15,27 +15,31 @@ struct FamousPersonsView: View {
     @ObservedObject var viewModel: FamousPersonsVM
     
     
-        private let gridLayout = [
-            GridItem(.flexible()),
-            GridItem(.flexible()),
-    
-        ]
+    private let gridLayout = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        
+    ]
     
     // MARK: - Body
     var body: some View {
         ZStack {
             backgroundColor.ignoresSafeArea()
-            ScrollView {
-                LazyVGrid(columns: gridLayout, spacing: 10) {
-                    ForEach($viewModel.famousPersonsResult) { person in
-                        PersonsView(person: person)
+            VStack(alignment: .leading) {
+                HeaderView()
+                ScrollView {
+                    LazyVGrid(columns: gridLayout, spacing: 10) {
+                        ForEach($viewModel.famousPersonsResult) { person in
+                            PersonsView(person: person)
+                        }
                     }
                 }
             }
+            .padding()
         }
-          //  .padding()
-  
+        
     }
+
 }
 #Preview {
     FamousPersonsView(viewModel: FamousPersonsVM())

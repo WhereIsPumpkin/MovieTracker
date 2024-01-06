@@ -9,18 +9,19 @@ import SwiftUI
 
 struct PersonsView: View {
     
-    //@ObservedObject var viewModel: FamousPersonsVM
+    // MARK: - Properties
     @Binding var person: Result
     var profilePathUrl = "https://image.tmdb.org/t/p/w500"
     
+    // MARK: - Body
     var body: some View {
         VStack {
+            
             profilePic
             info
                 .frame(height: 50)
-            
         }
-        //.padding()
+
         .background(.black)
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
@@ -51,7 +52,6 @@ struct PersonsView: View {
         }
         .font(.system(size: 14, weight: .light))
         .foregroundColor(.white)
-        //.padding()
     }
 }
    
