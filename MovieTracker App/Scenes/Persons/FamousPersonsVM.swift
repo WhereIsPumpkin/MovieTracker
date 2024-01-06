@@ -10,4 +10,8 @@ import NetSwift
 
 class FamousPersonsVM: ObservableObject {
     
+    // MARK: - Properties
+    
+    
+    
 }
