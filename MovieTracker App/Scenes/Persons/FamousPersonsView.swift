@@ -8,22 +8,35 @@
 import SwiftUI
 
 struct FamousPersonsView: View {
+    private let backgroundColor = Color(red: 0.06, green: 0.11, blue: 0.17)
     
     // MARK: - Properties
     
     @ObservedObject var viewModel: FamousPersonsVM
     
-    private let gridLayout = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-    ]
+    
+        private let gridLayout = [
+            GridItem(.flexible()),
+            GridItem(.flexible()),
+    
+        ]
     
     // MARK: - Body
     var body: some View {
-        Text("Famous Persons")
+        ZStack {
+            backgroundColor.ignoresSafeArea()
+            ScrollView {
+                LazyVGrid(columns: gridLayout, spacing: 10) {
+                    ForEach($viewModel.famousPersonsResult) { person in
+                        PersonsView(person: person)
+                    }
+                }
+            }
+        }
+          //  .padding()
+  
     }
 }
-
 #Preview {
     FamousPersonsView(viewModel: FamousPersonsVM())
 }
