@@ -15,6 +15,6 @@ struct PopularMoviesView: View {
     }
 }
 
-#Preview {
-    PopularMoviesView(viewModel: PopularMoviesVM())
-}
+//#Preview {
+//    PopularMoviesView(viewModel: PopularMoviesVM())
+//}
