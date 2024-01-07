@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainTabView: View {
-    
     var body: some View {
         TabView {
             PopularMoviesView(viewModel: PopularMoviesVM())
@@ -28,7 +27,6 @@ struct MainTabView: View {
                     Label("Tv Series", systemImage: "tv.fill")
                 }
         }
-        .tint(Color(red: 0.28, green: 0.81, blue: 1))
     }
 }
 #Preview {
