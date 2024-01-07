@@ -15,6 +15,6 @@ struct CinemaView: View {
     }
 }
 
-//#Preview {
-//    CinemaView(viewModel: CinemaVM())
-//}
+#Preview {
+    CinemaView(viewModel: CinemaVM())
+}

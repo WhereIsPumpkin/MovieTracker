@@ -14,14 +14,17 @@ struct TvSeriesResponse: Decodable {
 struct TvSeries: Decodable {
     let id: Int
     let originalLanguage: String
-    let originalName: String
-    let voteAverage: Double
+    let posterPath: String
+    let firstAirDate: String
+    let voteAverage: Double?
+    let name: String
     let overview: String
     
     enum CodingKeys: String, CodingKey {
-        case id, overview
+        case id, name, overview
         case originalLanguage = "original_language"
-        case originalName = "original_name"
+        case posterPath = "poster_path"
+        case firstAirDate = "first_air_date"
         case voteAverage = "vote_average"
     }
 }

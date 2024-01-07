@@ -15,6 +15,6 @@ struct FamousPersonsView: View {
     }
 }
 
-//#Preview {
-//    FamousPersonsView(viewModel: FamousPersonsVM())
-//}
+#Preview {
+    FamousPersonsView(viewModel: FamousPersonsVM())
+}
