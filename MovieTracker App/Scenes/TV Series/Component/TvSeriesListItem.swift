@@ -13,7 +13,6 @@ struct TvSeriesListItem: View {
     @Binding var tvSeriesItem: TvSeries
     var posterBaseURL = "https://image.tmdb.org/t/p/original"
     
-    
     // MARK: - body
     var body: some View {
         

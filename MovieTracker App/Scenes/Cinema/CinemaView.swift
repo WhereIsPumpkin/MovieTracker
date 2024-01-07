@@ -11,13 +11,12 @@ struct CinemaView: View {
     
     // MARK: - Properties
     @ObservedObject var viewModel: CinemaVM
-    private let backgroundColor = Color(red: 0.06, green: 0.11, blue: 0.17)
     private let columns = [GridItem(.adaptive(minimum: 165)), GridItem(.adaptive(minimum: 165))]
     
     // MARK: - Body
     var body: some View {
         ZStack(alignment: .leading) {
-            backgroundColor.ignoresSafeArea()
+            Color("Background").ignoresSafeArea()
             contentStack
         }
     }

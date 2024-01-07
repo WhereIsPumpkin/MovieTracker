@@ -6,9 +6,9 @@
 //
 
 import Foundation
-//import NetSwift
+import NetSwift
 
-class CinemaVM: ObservableObject {
+final class CinemaVM: ObservableObject {
     // MARK: - Properties
     @Published var cinemaMovies: [CinemaMovie] = []
     @Published var errorMSG: String = ""

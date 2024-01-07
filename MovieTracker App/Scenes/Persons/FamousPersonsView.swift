@@ -8,15 +8,12 @@
 import SwiftUI
 
 struct FamousPersonsView: View {
-    private let backgroundColor = Color(red: 0.06, green: 0.11, blue: 0.17)
-    
     // MARK: - Properties
     @ObservedObject var viewModel: FamousPersonsVM
-
+    
     private let gridLayout = [
         GridItem(.flexible()),
         GridItem(.flexible()),
-        
     ]
     
     // MARK: - Computed Property
@@ -33,7 +30,7 @@ struct FamousPersonsView: View {
     // MARK: - Body
     var body: some View {
         ZStack {
-            backgroundColor.ignoresSafeArea()
+            Color("Background").ignoresSafeArea()
             VStack(alignment: .leading) {
                 HeaderView()
                 scrollView
@@ -41,7 +38,7 @@ struct FamousPersonsView: View {
             .padding()
         }
     }
-
+    
 }
 #Preview {
     FamousPersonsView(viewModel: FamousPersonsVM())
