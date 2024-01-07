@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import NetSwift
+//import NetSwift
 
 class CinemaVM: ObservableObject {
     // MARK: - Properties

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import NetSwift
+//import NetSwift
 
 final class FamousPersonsVM: ObservableObject {
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32E0B0FA2B49C28100ECF994 /* NetSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 32E0B0F92B49C28100ECF994 /* NetSwift */; };
+		32F9B01C2B4B0CA800FB1F6A /* TvSeriesListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F9B01B2B4B0CA800FB1F6A /* TvSeriesListItem.swift */; };
 		758201412B4759A30009AFF4 /* MovieTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758201402B4759A30009AFF4 /* MovieTrackerApp.swift */; };
 		758201432B4759A30009AFF4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758201422B4759A30009AFF4 /* MainTabView.swift */; };
 		758201452B4759A30009AFF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758201442B4759A30009AFF4 /* Assets.xcassets */; };
@@ -31,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32F9B01B2B4B0CA800FB1F6A /* TvSeriesListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesListItem.swift; sourceTree = "<group>"; };
 		7582013D2B4759A30009AFF4 /* MovieTracker App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MovieTracker App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		758201402B4759A30009AFF4 /* MovieTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrackerApp.swift; sourceTree = "<group>"; };
 		758201422B4759A30009AFF4 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -59,18 +62,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				758201722B476AC80009AFF4 /* NetSwift in Frameworks */,
+				32E0B0FA2B49C28100ECF994 /* NetSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32E0B0F82B49C28100ECF994 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32F9B01A2B4B0C7000FB1F6A /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				32F9B01B2B4B0CA800FB1F6A /* TvSeriesListItem.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		758201342B4759A20009AFF4 = {
 			isa = PBXGroup;
 			children = (
 				7582013F2B4759A30009AFF4 /* MovieTracker App */,
 				7582013E2B4759A30009AFF4 /* Products */,
+				32E0B0F82B49C28100ECF994 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +192,7 @@
 		7582016B2B47666A0009AFF4 /* TV Series */ = {
 			isa = PBXGroup;
 			children = (
+				32F9B01A2B4B0C7000FB1F6A /* Component */,
 				7582016C2B4767BF0009AFF4 /* TvSeriesView.swift */,
 				7582016E2B47681C0009AFF4 /* TvSeriesVM.swift */,
 			);
@@ -214,7 +234,7 @@
 			);
 			name = "MovieTracker App";
 			packageProductDependencies = (
-				758201712B476AC80009AFF4 /* NetSwift */,
+				32E0B0F92B49C28100ECF994 /* NetSwift */,
 			);
 			productName = "MovieTracker App";
 			productReference = 7582013D2B4759A30009AFF4 /* MovieTracker App.app */;
@@ -277,6 +297,7 @@
 				9858224C2B49A7DF00C872FD /* PersonsView.swift in Sources */,
 				758201552B475BD30009AFF4 /* PopularMoviesVM.swift in Sources */,
 				7582015B2B4762670009AFF4 /* FamousPersonsView.swift in Sources */,
+				32F9B01C2B4B0CA800FB1F6A /* TvSeriesListItem.swift in Sources */,
 				7582016F2B47681C0009AFF4 /* TvSeriesVM.swift in Sources */,
 				758201692B4765990009AFF4 /* CinemaVM.swift in Sources */,
 				758201582B475CDE0009AFF4 /* Movie.swift in Sources */,
@@ -511,7 +532,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		758201712B476AC80009AFF4 /* NetSwift */ = {
+		32E0B0F92B49C28100ECF994 /* NetSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 758201702B476AC80009AFF4 /* XCRemoteSwiftPackageReference "SwiftNet" */;
 			productName = NetSwift;
