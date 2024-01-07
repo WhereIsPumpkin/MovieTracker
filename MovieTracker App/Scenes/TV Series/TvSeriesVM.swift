@@ -8,7 +8,7 @@
 import Foundation
 import NetSwift
 
-class TvSeriesVM: ObservableObject {
+final class TvSeriesVM: ObservableObject {
     
     // MARK: - Properties
     @Published var tvSeries: [TvSeries] = []

@@ -40,13 +40,18 @@ struct TvSeriesView: View {
             
             VStack(spacing: 40) {
                 
-                ForEach($viewModel.tvSeries, id: \.id) { tvSerie in
-                    
-                    TvSeriesListItem(tvSeriesItem: tvSerie)
-                        .cornerRadius(8)
-                        .padding(.horizontal)
-                }
+                tvSeriesForEachList
             }
+        }
+    }
+    
+    private var tvSeriesForEachList: some View {
+        
+        ForEach($viewModel.tvSeries, id: \.id) { tvSerie in
+            
+            TvSeriesListItem(tvSeriesItem: tvSerie)
+                .cornerRadius(8)
+                .padding(.horizontal)
         }
     }
 }
